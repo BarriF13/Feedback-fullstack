@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();//express server
 
 app.get('/', (req ,res)=>{
-  res.send({ hi: 'there'})
+  res.send({ bye: 'buddy'})
 
 });
 // heroku uses this and chose the port if not use 5000
