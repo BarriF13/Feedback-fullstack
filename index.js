@@ -10,12 +10,22 @@ const keys = require('./config/keys');
 passport.use(new GoogleStrategy({
   clientID: keys.googleClientID,
   clientSecret: keys.googleClientSecret,
-  //after grant permission we sent user to url below
+  //after grant permission we sent user to url below --related to redirect_uri_mismatch
   callbackURL: '/auth/google/callback'
-  }, (accessToken) => {
+},
+  (accessToken) => {
     console.log(accessToken);
   })
 );
+
+//Rout handler to send user to passport authentication place -'google' is internal strategy identifier inside GoogleStrategy
+app.get('/auth/google', passport.authenticate('google', {
+  //scope tell google we want to access these two string below as already in google account and it's not made up
+  scope: ['profile', 'email']
+  })
+);
+
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 // heroku uses this and chose the port if not use 5000
 const PORT = process.env.PORT || 5000;
