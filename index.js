@@ -13,8 +13,12 @@ passport.use(new GoogleStrategy({
   //after grant permission we sent user to url below --related to redirect_uri_mismatch
   callbackURL: '/auth/google/callback'
 },
-  (accessToken) => {
-    console.log(accessToken);
+  //now here we can get users props and save it to our database 
+  (accessToken, refreshToken, profile, done) => {
+    console.log('access token',accessToken);
+    console.log('refresh token',refreshToken);
+    console.log('profile:', profile);
+    
   })
 );
 
