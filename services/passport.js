@@ -10,7 +10,14 @@ const User = mongoose.model('users'); //User is out model class here
 //for adding cookie-- user here is a database user and id is mongo id 
 passport.serializeUser((user, done) => {
   done(null, user.id);
-})
+});
+//removing id , reversing the serializing process 
+passport.deserializeUser((id, done) => {
+  User.findById(id)
+    .then(user => {
+      done(null, user)
+    });
+});
 
 passport.use(new GoogleStrategy({
   clientID: keys.googleClientID,
