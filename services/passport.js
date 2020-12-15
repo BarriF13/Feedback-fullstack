@@ -17,11 +17,16 @@ passport.use(new GoogleStrategy({
     //console.log('profile', profile);
     User.findOne({ googleId: profile.id })
     .then((existingUser)=>{
+      //if we already have a record
       if(existingUser){
-        //we already have a record
+        //done is for finishing off with mongo first arg is err if there is no error we get null , second arg = user record-everything is done  
+        done(null , existingUser);
       } else {
         //we make a new record
-        new User({ googleId: profile.id }).save();//it is not save in mondoDB yet so we use .save to save ut database 
+        // we use .save to save it database -mongoose model instance
+        new User({ googleId: profile.id })
+        .save()
+        .then((user)=>{ done(null, user) });
       }
     })
    
