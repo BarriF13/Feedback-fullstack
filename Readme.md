@@ -4,6 +4,8 @@
 `npm install --save nodemon`
 * mongoose.s for working better with mongoDB
 `npm install --save mongoose`
+* cookie session module
+` npm install --save-cookie-session`
 ----
 ----
 deploy with heroku
