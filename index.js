@@ -11,10 +11,11 @@ require('./services/passport');//passport.js doesn't return anything so we won't
 mongoose.connect(keys.mongoURI);
 
 const app = express();
+//*********** middle wares **********/
 //now telling express to use cookie--maxAge = how long to expired in milliseconds (days*hours*min*second*millisecond)--Keys for encrypt and we don't put it in public
 app.use(
   cookieSession({
-    maxAge: 30*24*60*60* 1000,
+    maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [keys.cookieKeys]
 
   })

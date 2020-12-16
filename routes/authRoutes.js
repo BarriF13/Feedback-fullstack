@@ -18,6 +18,7 @@ module.exports = (app) => {
   })
   //route to check if the user already registered 
   app.get('/api/current_user', (req, res) => {
+    //res.send(req.session);
     res.send(req.user);
   })
 
