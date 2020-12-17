@@ -12,5 +12,7 @@
 * react `npx create-react-app client `
 * concurrently --to run two servers in the same time 
 `npm install --save concurrently`
+* http-proxy-middleware@0.21.0 -- making proxy for linking two servers together
+`npm install http-proxy-middleware@0.21.0`
 ----
 deploy with heroku
