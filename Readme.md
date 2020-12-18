@@ -14,7 +14,7 @@
 `npm install --save concurrently`
 * http-proxy-middleware@0.21.0 -- making proxy for linking two servers together
 `npm install http-proxy-middleware@0.21.0` 
-* install router and redux
+* install router and redux in /client terminal
 `$ npm install --save redux react-redux react-router-dom`
 ----
 deploy with heroku

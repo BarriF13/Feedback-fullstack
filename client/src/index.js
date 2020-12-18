@@ -2,6 +2,18 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Provider} from 'react-redux';
+import {createStore , applyMiddleware} from 'redux';
+
 import App from './components/App';
 
-ReactDom.render(<App/>, document.querySelector('#root'));
+//all the data is in store -redux
+const store = createStore( ()=> [], {}, applyMiddleware());
+
+
+ReactDom.render(
+  //Provider component that makes the store accessible to every component in the app
+  //provider tells to all her children if there is a update to store and available for all the comps
+<Provider store={store}><App/></Provider>, 
+document.querySelector('#root')
+);
