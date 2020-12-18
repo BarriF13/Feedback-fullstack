@@ -18,5 +18,7 @@
 `$ npm install --save redux react-redux react-router-dom`
 * materialize css
 `npm install materialize-css@next`--client side
+*axios and redux-thunk --for calling api from the backend server and use it in redux
+`npm install --save axios redux-thunk ` -- client side 
 ----
 deploy with heroku
