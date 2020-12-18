@@ -18,7 +18,7 @@ export class Header extends Component {
 
       <nav>
         <div class="nav-wrapper">
-          <a href="" class="left brand-logo">emaily</a>
+          <a href="" class="left brand-logo">Emaily</a>
           <ul id="nav-mobile" class="right">
            {this.renderContent()}
           </ul>
