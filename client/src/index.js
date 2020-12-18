@@ -6,9 +6,10 @@ import { Provider} from 'react-redux';
 import {createStore , applyMiddleware} from 'redux';
 
 import App from './components/App';
+import reducers from './reducers';
 
 //all the data is in store -redux
-const store = createStore( ()=> [], {}, applyMiddleware());
+const store = createStore( reducers, {}, applyMiddleware());
 
 
 ReactDom.render(
