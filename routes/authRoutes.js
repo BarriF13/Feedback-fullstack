@@ -20,7 +20,7 @@ module.exports = (app) => {
   //for logout
   app.get('/api/logout', (req, res) => {
     req.logout();
-    res.send(req.user);// just to say you are lotout
+    res.redirect('/');// after logout 
   })
   //route to check if the user already registered 
   app.get('/api/current_user', (req, res) => {

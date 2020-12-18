@@ -8,7 +8,7 @@ export class Header extends Component {
       case false:
         return <li><a href="/auth/google">Login With Google </a></li>
       default:
-        return <li><a href="">Logout</a></li>
+        return <li><a href="/api/logout">Logout</a></li>
 
     }
   }
@@ -18,7 +18,7 @@ export class Header extends Component {
 
       <nav>
         <div class="nav-wrapper">
-          <a href="" class="left brand-logo">Logo</a>
+          <a href="" class="left brand-logo">emaily</a>
           <ul id="nav-mobile" class="right">
            {this.renderContent()}
           </ul>
