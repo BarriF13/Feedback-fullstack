@@ -16,5 +16,7 @@
 `npm install http-proxy-middleware@0.21.0` 
 * install router and redux in /client terminal
 `$ npm install --save redux react-redux react-router-dom`
+* materialize css
+`npm install materialize-css@next`--client side
 ----
 deploy with heroku
