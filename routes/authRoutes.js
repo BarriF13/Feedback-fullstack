@@ -10,9 +10,15 @@ module.exports = (app) => {
   })
   );
 
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    }
+  );
   //for logout
-  app.get('/api/logout', (req, res ) => {
+  app.get('/api/logout', (req, res) => {
     req.logout();
     res.send(req.user);// just to say you are lotout
   })
