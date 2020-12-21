@@ -7,6 +7,10 @@
 `npm install --save mongoose`
 * cookie session module
 ` npm install --save-cookie-session`
+* stripe for getting info from stripe api to our backend api
+`npm install --save stripe`
+* body parser for parsing token for express api 
+` npm install --save body-parser`
 ----
 * react `npx create-react-app client `
 * concurrently --to run two servers in the same time 

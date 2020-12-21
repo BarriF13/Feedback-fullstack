@@ -27,5 +27,6 @@ module.exports = (app) => {
     //res.send(req.session);
     res.send(req.user);
   })
+  
 
 };
