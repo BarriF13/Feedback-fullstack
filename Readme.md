@@ -8,7 +8,6 @@
 * cookie session module
 ` npm install --save-cookie-session`
 ----
-### View side
 * react `npx create-react-app client `
 * concurrently --to run two servers in the same time 
 `npm install --save concurrently`
@@ -18,9 +17,9 @@
 `$ npm install --save redux react-redux react-router-dom`
 * materialize css
 `npm install materialize-css@next`--client side
-*axios and redux-thunk --for calling api from the backend server and use it in redux
+* axios and redux-thunk --for calling api from the backend server and use it in redux
 `npm install --save axios redux-thunk ` -- client side 
 * Stripe checkout react for strip component for payment
-`$ npm install --save react-stripe-checkout`
+`$ npm install --save react-stripe-checkout` --client side
 ----
 deploy with heroku
