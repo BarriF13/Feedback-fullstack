@@ -20,5 +20,7 @@
 `npm install materialize-css@next`--client side
 *axios and redux-thunk --for calling api from the backend server and use it in redux
 `npm install --save axios redux-thunk ` -- client side 
+* Stripe checkout react for strip component for payment
+`$ npm install --save react-stripe-checkout`
 ----
 deploy with heroku
