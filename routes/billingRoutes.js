@@ -6,12 +6,19 @@ const stripe = require('stripe')(keys.stripeSecretKey);
 module.exports = app => {
   app.post('/api/stripe', async (req, res) => {
 
-   const charge = await stripe.charges.create({
+    if(!req.user){ 
+      return res.status(401).send({error: 'You must log in!'});
+    }
+    const charge = await stripe.charges.create({
       amount: 500,
       currency: 'usd',
       description: '$5 for 5 credits',
       source: req.body.id
     });
-console.log(charge)
+    // access User model / access credit / add credit /(async.await fn)then save the user-we need to save it to const user again to update user always--same reference but different object
+    req.user.credits += 5;
+    const user = await req.user.save();
+    //and send the new user to server 
+    res.send(user);
   });
 };
