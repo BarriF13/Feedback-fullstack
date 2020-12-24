@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 //to access the survey route we need to know if the user logged in first
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
-
+const Mailer = require('../services/Mailer');
+const surveyTemplate= require('../services/emailTemplates/surveyTemplate')
 //access model class -
 const Survey = mongoose.model('surveys');
 
@@ -20,7 +21,9 @@ module.exports = app => {
       _user: req.user.id,
       dateSent: Date.now()
 
-    })
+    });
+    //great place to send email
+   const mailer = new Mailer(survey, surveyTemplate(survey) );
   });
 
 };

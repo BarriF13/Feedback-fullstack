@@ -11,6 +11,8 @@
 `npm install --save stripe`
 * body parser for parsing token for express api 
 ` npm install --save body-parser`
+* sendgrid email service
+`npm install --save sendgrid`
 ----
 * react `npx create-react-app client `
 * concurrently --to run two servers in the same time 
