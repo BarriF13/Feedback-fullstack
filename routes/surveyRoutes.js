@@ -15,7 +15,11 @@ module.exports = app => {
       title,
       subject,
       body,
-      recipients: {email}
+      //({ email }))=this is property of email and email add as value
+      recipients: recipients.split(',').map(email=>({ email })),
+      _user: req.user.id,
+      dateSent: Date.now()
+
     })
   });
 
