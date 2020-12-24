@@ -32,6 +32,7 @@ app.use(passport.session());
 //they return a function 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 
 //for express in production mode in heroku
