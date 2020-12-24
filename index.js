@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const keys = require('./config/keys');
 
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');//passport.js doesn't return anything so we won't assign in to any variable
 
 
