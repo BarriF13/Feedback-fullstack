@@ -1,19 +1,19 @@
 //Responsible For showing surveyForm and surveyFormReview 
 
 import React, { Component } from 'react';
+import {reduxForm} from 'redux-form';
 import SurveyForm from './SurveyForm';
-import SurveyFromReview from './SurveyFormReview';
+import SurveyFormReview from './SurveyFormReview';
 
 export class SurveyNew extends Component {
 
-  state = { showFromReview: false};
+  state = { showFormReview: false};
 
     renderContent(){
-      if(this.state.showFromReview){
-        return <SurveyFromReview/>;
+      if(this.state.showFormReview){
+        return <SurveyFormReview onCancel={() => this.setState({showFormReview: false})}/>;
       }
-      return  <SurveyForm
-       onSurveySubmit={()=> this.setState({ showFromReview: true}) }/>;
+      return  <SurveyForm onSurveySubmit={()=> this.setState({ showFormReview: true})}/>;
     }
   render(){
     return (
@@ -24,4 +24,6 @@ export class SurveyNew extends Component {
   }
 }
 
-export default SurveyNew;
+export default reduxForm({
+  form: 'surveyForm'
+ })(SurveyNew);
