@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form'; //allows to talk to redux store at the top of our app -similar to connect function-- Field is helper for rendering html 
 import { Link } from 'react-router-dom'
 import SurveyField from './SurveyField';
-
+import validateEmails from '../../utils/validateEmails';
 const FIELDS = [
   { label: "Survey Title", name: "title" },
   { label: "Subject Line", name: "subject" },
@@ -46,10 +46,15 @@ export class SurveyForm extends Component {
 }
 function validate(values) {
   const errors = {};
+   errors.emails = validateEmails(values.emails || '');
+   
+  _.forEach(FIELDS, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = 'You must provide a value!';
+    }
+  });
 
-  if (!values.title) {
-    errors.title = 'You must provide a title';
-  }
+
 
   return errors;
 }
