@@ -7,13 +7,14 @@ import { Provider} from 'react-redux';
 import {createStore , applyMiddleware} from 'redux';
 import reduxThunk from 'redux-thunk'; 
 
+//-------temporary testing email----
 
 import App from './components/App';
 import reducers from './reducers';
 
+import axios from 'axios';
+window.axios = axios;
 //Making action creator 
-
-
 //all the data is in store -redux
 const store = createStore( reducers, {}, applyMiddleware(reduxThunk));
 
@@ -26,4 +27,4 @@ document.querySelector('#root')
 );
 
 console.log('Stripe key is',process.env.REACT_APP_STRIPE_KEY);
-console.log('Envi is ', process.env.NODE_ENV );
+console.log('Env is ', process.env.NODE_ENV );
