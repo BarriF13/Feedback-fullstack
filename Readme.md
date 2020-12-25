@@ -27,5 +27,7 @@
 `npm install --save axios redux-thunk ` -- client side 
 * Stripe checkout react for strip component for payment
 `$ npm install --save react-stripe-checkout` --client side
+* redux-form for survey forms 
+`npm instal --save redux-from@versionnumber`
 ----
 deploy with heroku
