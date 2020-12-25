@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import SurveyForm from './SurveyForm';
 
 export class SurveyNew extends Component {
-  render() {
+  render(){
     return (
       <div>
         <SurveyForm/>
