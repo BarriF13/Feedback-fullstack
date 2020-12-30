@@ -15,6 +15,8 @@
 `npm install --save sendgrid`
 * Use of ngrok for sendgrid webhooks for tracking events - like if user open our email...
 `npx ngrok http 5000`
+* lodash and path parser
+`npm install --save lodash path-parser`
 
 ----
 * react `npx create-react-app client `
