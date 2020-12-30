@@ -4,19 +4,42 @@ import { fetchSurveys } from '../../actions';
 
 
 export class SurveyList extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchSurveys();
   }
+
+  renderSurveys() {
+    return this.props.surveys.map(survey => {
+      return (
+        <div className=" card light-grey darken-1" key={survey._id}>
+          <div className="card-content ">
+            <span className="card-title">{survey.title}</span>
+            <p >
+              {survey.body}
+            </p>
+            <p className="right">
+              Sent On: {new Date(survey.dateSent).toLocaleDateString()}
+            </p>
+          </div>
+          <div className="card-action">
+          <a >Yes: {survey.yes}</a>
+          <a >No: {survey.no}</a>
+          </div>
+        </div>
+      )
+    })
+  }
+
   render() {
     return (
       <div>
-        SurveyList 
+        {this.renderSurveys()}
       </div>
     )
   }
 }
-function mapStateToProps({surveys}){
+function mapStateToProps({ surveys }) {
   return { surveys };
 }
 
-export default connect( mapStateToProps, { fetchSurveys })(SurveyList);
+export default connect(mapStateToProps, { fetchSurveys })(SurveyList);
