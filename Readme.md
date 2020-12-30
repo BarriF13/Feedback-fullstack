@@ -13,6 +13,9 @@
 ` npm install --save body-parser`
 * sendgrid email service
 `npm install --save sendgrid`
+* Use of ngrok for sendgrid webhooks for tracking events - like if user open our email...
+`npx ngrok http 5000`
+
 ----
 * react `npx create-react-app client `
 * concurrently --to run two servers in the same time 
